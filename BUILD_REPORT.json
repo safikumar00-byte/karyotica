@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "index.html",
+    "about-us.html",
+    "grow-fast.html",
+    "thrive.html",
+    "bountiful.html",
+    "our-team.html",
+    "contact.html",
+    "blog.html",
+    "blog-vita-turf.html",
+    "blog-sustainable-biotechnology.html",
+    "blog-biostimulant-growth.html",
+    "blog-hemp-carbon-sequestration.html",
+    "blog-hemp-research-update.html",
+    "blog-award-recipient.html",
+    "blog-bountiful-hydroponics.html"
+  ],
+  "output_pages": [
+    "about-us.html",
+    "blog-award-recipient.html",
+    "blog-biostimulant-growth.html",
+    "blog-bountiful-hydroponics.html",
+    "blog-hemp-carbon-sequestration.html",
+    "blog-hemp-research-update.html",
+    "blog-sustainable-biotechnology.html",
+    "blog-vita-turf.html",
+    "blog.html",
+    "bountiful.html",
+    "contact.html",
+    "grow-fast.html",
+    "index.html",
+    "our-team.html",
+    "thrive.html"
+  ],
+  "global_css_files": [
+    "global.css"
+  ],
+  "global_js_files": [
+    "global.js"
+  ]
+}
