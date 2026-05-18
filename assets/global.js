@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initRouteAwareNavState();
   initReveals();
   initDesktopMenus();
   initMobileMenus();
@@ -8,7 +9,69 @@ document.addEventListener('DOMContentLoaded', () => {
   initTimelines();
   initTestimonials();
   initAnimatedText();
+  initStaticForms();
 });
+
+function getCurrentPageContext() {
+  const body = document.body;
+  const sourceFile = body.dataset.sourceFile
+    || window.location.pathname.split('/').pop()
+    || 'index.html';
+  const pageType = body.dataset.pageType || 'page';
+  const route = body.dataset.route || (sourceFile === 'index.html' ? '/' : `/${sourceFile.replace(/\.html$/, '')}`);
+  return { sourceFile, pageType, route };
+}
+
+function isLocalPageHref(href) {
+  return href
+    && !href.startsWith('#')
+    && !href.startsWith('mailto:')
+    && !href.startsWith('tel:')
+    && !/^https?:\/\//i.test(href);
+}
+
+function normalizeHrefToFile(href) {
+  const cleanHref = href.split('#')[0].split('?')[0];
+  if (!cleanHref || cleanHref === '/') return 'index.html';
+  return cleanHref.split('/').pop() || 'index.html';
+}
+
+function initRouteAwareNavState() {
+  const { sourceFile, pageType } = getCurrentPageContext();
+  const isBlogPost = pageType === 'blog-post';
+
+  document.querySelectorAll('.site-nav-menu li, .site-mobile-nav-menu li').forEach((item) => {
+    item.classList.remove('current-menu-item', 'current_page_item', 'current_page_parent', 'page_item', 'is-current', 'is-current-parent');
+  });
+
+  document.querySelectorAll('.site-nav-menu a, .site-mobile-nav-menu a').forEach((link) => {
+    link.classList.remove('site-active-menu-item');
+    link.removeAttribute('aria-current');
+  });
+
+  document.querySelectorAll('.site-nav-menu a, .site-mobile-nav-menu a').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!isLocalPageHref(href)) return;
+
+    const targetFile = normalizeHrefToFile(href);
+    const matchesCurrentFile = targetFile === sourceFile;
+    const matchesBlogIndex = isBlogPost && targetFile === 'blog.html';
+
+    if (!matchesCurrentFile && !matchesBlogIndex) return;
+
+    link.classList.add('site-active-menu-item');
+    link.setAttribute('aria-current', 'page');
+
+    const item = link.closest('li');
+    if (item) item.classList.add('is-current');
+  });
+
+  document.querySelectorAll('.menu-item-has-children').forEach((item) => {
+    const hasActiveChild = item.querySelector('.site-sub-menu a[aria-current="page"], .site-mobile-sub-menu a[aria-current="page"]');
+    if (!hasActiveChild) return;
+    item.classList.add('is-current-parent');
+  });
+}
 
 function initReveals() {
   const hidden = document.querySelectorAll('.site-hidden');
@@ -122,7 +185,11 @@ function initMobileMenus() {
     if (!toggle || !menu) return;
     toggle.setAttribute('role', 'button');
     toggle.setAttribute('tabindex', '0');
-    const handler = () => menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    const handler = () => {
+      const isOpen = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
     toggle.addEventListener('click', handler);
     toggle.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -150,14 +217,17 @@ function initOffcanvas() {
     const panel = host.querySelector('.site-offcanvas-wrap') || document.querySelector('.site-offcanvas-wrap');
     if (!panel) return;
     const closeButton = panel.querySelector('.site-close-offcanvas');
+    trigger.setAttribute('aria-expanded', 'false');
     const openPanel = (event) => {
       event.preventDefault();
       panel.classList.add('is-open');
       document.body.classList.add('has-offcanvas');
+      trigger.setAttribute('aria-expanded', 'true');
     };
     const closePanel = () => {
       panel.classList.remove('is-open');
       document.body.classList.remove('has-offcanvas');
+      trigger.setAttribute('aria-expanded', 'false');
     };
     trigger.addEventListener('click', openPanel);
     if (closeButton) closeButton.addEventListener('click', closePanel);
@@ -241,6 +311,18 @@ function initTimelines() {
       index = Math.max(0, Math.min(index, maxIndex));
       const offset = slides[0].offsetWidth + 4;
       wrapper.style.transform = `translate3d(${-1 * index * offset}px, 0, 0)`;
+      if (prev) {
+        const disabled = index === 0;
+        prev.classList.toggle('swiper-button-disabled', disabled);
+        prev.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+        prev.tabIndex = disabled ? -1 : 0;
+      }
+      if (next) {
+        const disabled = index >= maxIndex;
+        next.classList.toggle('swiper-button-disabled', disabled);
+        next.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+        next.tabIndex = disabled ? -1 : 0;
+      }
     };
     if (prev) prev.addEventListener('click', () => { index -= 1; render(); });
     if (next) next.addEventListener('click', () => { index += 1; render(); });
@@ -270,6 +352,16 @@ function initTestimonials() {
         slide.classList.toggle('slick-active', active);
         slide.classList.toggle('slick-current', slideIndex === index);
       });
+      if (prev) {
+        const disabled = index === 0;
+        prev.classList.toggle('slick-hidden', disabled);
+        prev.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      }
+      if (next) {
+        const disabled = index >= maxIndex;
+        next.classList.toggle('slick-hidden', disabled);
+        next.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      }
     };
     if (prev) prev.addEventListener('click', () => { index -= 1; render(); });
     if (next) next.addEventListener('click', () => { index += 1; render(); });
@@ -290,5 +382,13 @@ function initAnimatedText() {
       options[index].classList.add('site-anim-text-visible');
       options[index].style.opacity = '1';
     }, 2200);
+  });
+}
+
+function initStaticForms() {
+  document.querySelectorAll('.site-form[data-submit-mode="ui-only"]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+    });
   });
 }

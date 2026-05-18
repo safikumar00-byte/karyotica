@@ -7771,3 +7771,25 @@ body.has-offcanvas{overflow:hidden}
 .site-7 .site-element.site-element-ce599db > .site-motion-effects-container > .site-motion-effects-layer{background-image:url("./pages/index/img/tomatoes.webp");background-repeat:no-repeat;background-size:cover}
 .site-page-7 .site-hidden{opacity:1!important;visibility:visible!important}
 
+/* Migration-ready route-aware active navigation */
+.site-779 .site-nav-menu .site-menu-item[aria-current="page"],
+.site-779 .site-mobile-nav-menu a[aria-current="page"] {
+  color: #86bb46;
+}
+
+.site-779 .site-sub-menu .site-sub-menu-item[aria-current="page"],
+.site-779 .site-mobile-sub-menu .site-mobile-sub-menu-item[aria-current="page"] {
+  background-color: #86bb46;
+  color: #ffffff;
+}
+
+.site-779 .site-nav-menu > .menu-item-has-children.is-current-parent > a .site-sub-icon,
+.site-779 .site-nav-menu > .menu-item-has-children.is-current-parent > .site-menu-item-group > a .site-sub-icon {
+  color: #86bb46;
+}
+
+.site-779 .site-sub-menu .menu-item-has-children.is-current-parent > a .site-sub-icon,
+.site-779 .site-sub-menu .menu-item-has-children.is-current-parent > .site-menu-item-group > a .site-sub-icon,
+.site-779 .site-mobile-nav-menu .menu-item-has-children.is-current-parent > a::after {
+  color: #ffffff;
+}

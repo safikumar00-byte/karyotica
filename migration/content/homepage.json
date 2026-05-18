@@ -1,0 +1,63 @@
+{
+  "route": "/",
+  "sections": [
+    {
+      "id": "hero",
+      "component": "HeroSection",
+      "eyebrow": "Advancing Sustainable Agriculture",
+      "headingPrefix": "Sustainable Biostimulants for a",
+      "cta": { "label": "Inquire Now", "href": "/contact" }
+    },
+    {
+      "id": "intro",
+      "component": "StatsSection",
+      "eyebrow": "Transforming Agriculture with Innovation",
+      "heading": "Karyotica Labs",
+      "stats": [
+        { "label": "Avg. Yield", "value": 37, "suffix": "%" },
+        { "label": "Natural", "value": 100, "suffix": "%" },
+        { "label": "Reduced Fertilizer", "value": 30, "suffix": "%" }
+      ],
+      "cta": { "label": "Learn More", "href": "/about-us" }
+    },
+    {
+      "id": "preorder-offer",
+      "component": "PageSection",
+      "heading": "Reserve Your Spot",
+      "formPurpose": "preorder"
+    },
+    {
+      "id": "product-showcase",
+      "component": "ProductShowcase",
+      "eyebrow": "Our Revolutionary Products",
+      "heading": "Product Showcase",
+      "items": [
+        { "label": "Grow Fast", "href": "/grow-fast" },
+        { "label": "Thrive", "href": "/thrive" },
+        { "label": "Bountiful", "href": "/bountiful" }
+      ]
+    },
+    {
+      "id": "value-proposition",
+      "component": "FeatureListSection",
+      "headingLeft": "Our Value Proposition",
+      "headingRight": "Smart Solutions for Growing"
+    },
+    {
+      "id": "turf-care",
+      "component": "PageSection",
+      "heading": "Revolutionizing Turf Care - Coming Soon!"
+    },
+    {
+      "id": "testimonials",
+      "component": "TestimonialSection",
+      "heading": "What Our Clients Say"
+    },
+    {
+      "id": "tomato-cta",
+      "component": "PageSection",
+      "heading": "The Future of Growing Food",
+      "cta": { "label": "Contact us Now to Order our Products", "href": "/contact" }
+    }
+  ]
+}

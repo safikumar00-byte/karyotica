@@ -1,0 +1,25 @@
+{
+  "layout": {
+    "shell": "shared",
+    "header": "site-779",
+    "offcanvasForm": "site-701",
+    "footer": "site-674"
+  },
+  "routes": [
+    { "sourceFile": "index.html", "route": "/", "pageType": "home" },
+    { "sourceFile": "about-us.html", "route": "/about-us", "pageType": "page" },
+    { "sourceFile": "our-team.html", "route": "/our-team", "pageType": "page" },
+    { "sourceFile": "contact.html", "route": "/contact", "pageType": "page" },
+    { "sourceFile": "blog.html", "route": "/blog", "pageType": "blog-index" },
+    { "sourceFile": "grow-fast.html", "route": "/grow-fast", "pageType": "product" },
+    { "sourceFile": "thrive.html", "route": "/thrive", "pageType": "product" },
+    { "sourceFile": "bountiful.html", "route": "/bountiful", "pageType": "product" },
+    { "sourceFile": "blog-vita-turf.html", "route": "/blog/vita-turf", "pageType": "blog-post" },
+    { "sourceFile": "blog-sustainable-biotechnology.html", "route": "/blog/sustainable-biotechnology", "pageType": "blog-post" },
+    { "sourceFile": "blog-biostimulant-growth.html", "route": "/blog/biostimulant-growth", "pageType": "blog-post" },
+    { "sourceFile": "blog-hemp-carbon-sequestration.html", "route": "/blog/hemp-carbon-sequestration", "pageType": "blog-post" },
+    { "sourceFile": "blog-hemp-research-update.html", "route": "/blog/hemp-research-update", "pageType": "blog-post" },
+    { "sourceFile": "blog-award-recipient.html", "route": "/blog/award-recipient", "pageType": "blog-post" },
+    { "sourceFile": "blog-bountiful-hydroponics.html", "route": "/blog/bountiful-hydroponics", "pageType": "blog-post" }
+  ]
+}

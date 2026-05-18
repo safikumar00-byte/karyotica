@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "vita-turf",
+    "sourceFile": "blog-vita-turf.html",
+    "title": "Unlock the Future of Turf Care with Vita-Turf by Karyotica Labs",
+    "author": "karyoticacteamns",
+    "readingTime": "2 minutes",
+    "publishedAt": "2024-03-20T11:39:12+00:00",
+    "modifiedAt": "2025-01-14T21:55:27+00:00",
+    "heroImage": "./assets/shared/img/turf.webp",
+    "description": "A product story about Vita-Turf and its role in sustainable turf management."
+  },
+  {
+    "slug": "sustainable-biotechnology",
+    "sourceFile": "blog-sustainable-biotechnology.html",
+    "title": "Empowering Growth: Sustainable Biotechnology for Horticulture & Agriculture!",
+    "author": "karyoticacteamns",
+    "readingTime": "1 minute",
+    "publishedAt": "2024-03-20T11:39:21+00:00",
+    "modifiedAt": "2025-01-14T22:04:24+00:00",
+    "heroImage": "./assets/shared/img/Biotechnology.png",
+    "description": "An introduction to Karyotica Labs and its sustainable biotechnology approach."
+  },
+  {
+    "slug": "biostimulant-growth",
+    "sourceFile": "blog-biostimulant-growth.html",
+    "title": "Biostimulants and Growth",
+    "author": "karyoticacteamns",
+    "readingTime": "1 minute",
+    "publishedAt": "2024-03-20T11:39:29+00:00",
+    "modifiedAt": "2025-01-14T22:00:52+00:00",
+    "heroImage": "./assets/shared/img/Biostimulant.webp",
+    "description": "A short article on how Karyotica biostimulants support plant growth and resilience."
+  },
+  {
+    "slug": "hemp-carbon-sequestration",
+    "sourceFile": "blog-hemp-carbon-sequestration.html",
+    "title": "Hemp Carbon Sequestration Study Results",
+    "author": "karyoticacteamns",
+    "readingTime": "2 minutes",
+    "publishedAt": "2024-03-20T11:39:38+00:00",
+    "modifiedAt": "2025-01-14T22:02:51+00:00",
+    "heroImage": "./assets/shared/img/carbon-1.png",
+    "description": "Study results covering hemp carbon sequestration and the role of biostimulants in growth performance."
+  },
+  {
+    "slug": "hemp-research-update",
+    "sourceFile": "blog-hemp-research-update.html",
+    "title": "Hemp Research Update",
+    "author": "karyoticacteamns",
+    "readingTime": "1 minute",
+    "publishedAt": "2024-03-20T11:39:46+00:00",
+    "modifiedAt": "2025-01-14T22:03:30+00:00",
+    "heroImage": "./assets/shared/img/Blog-Figure1.png",
+    "description": "A research update focused on hemp trials, crop performance, and related learnings."
+  },
+  {
+    "slug": "award-recipient",
+    "sourceFile": "blog-award-recipient.html",
+    "title": "Karyotica Labs Award Recipient!",
+    "author": "karyoticacteamns",
+    "readingTime": "1 minute",
+    "publishedAt": "2025-01-15T19:12:01+00:00",
+    "modifiedAt": "2025-02-28T06:00:19+00:00",
+    "heroImage": "./assets/shared/img/Biostimulant-thrive-results.png",
+    "description": "An announcement covering Karyotica Labs receiving funding support through the Accelerate Program."
+  },
+  {
+    "slug": "bountiful-hydroponics",
+    "sourceFile": "blog-bountiful-hydroponics.html",
+    "title": "Boost Hydroponic Yields with BOUNTIFUL (PepTex-Plus)!",
+    "author": "karyoticacteamns",
+    "readingTime": "1 minute",
+    "publishedAt": "2025-03-15T01:22:36+00:00",
+    "modifiedAt": "2025-03-15T01:37:52+00:00",
+    "heroImage": "./assets/shared/img/hydroponics-blog-images.png",
+    "description": "A hydroponics trial update highlighting BOUNTIFUL yield gains and leaf greenness improvements."
+  }
+]

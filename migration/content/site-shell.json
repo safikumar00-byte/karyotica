@@ -1,0 +1,58 @@
+{
+  "brand": {
+    "name": "Karyotica Labs",
+    "logo": "./assets/shared/img/logo-3.png",
+    "homeHref": "/"
+  },
+  "contactInfo": {
+    "locations": "Sydney NS & Edmonton AB",
+    "email": "info@karyotica.ca"
+  },
+  "navItems": [
+    { "label": "Home", "href": "/" },
+    {
+      "label": "Products",
+      "href": "/",
+      "children": [
+        { "label": "ALL PURPOSE", "href": "/grow-fast" },
+        { "label": "SOIL BASED", "href": "/thrive" },
+        { "label": "HYDROPONICS", "href": "/bountiful" }
+      ]
+    },
+    { "label": "About Us", "href": "/about-us" },
+    { "label": "Our Team", "href": "/our-team" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "offcanvasForm": {
+    "title": "Get a Free Quote",
+    "submitMode": "ui-only",
+    "variant": "quote-request",
+    "fields": [
+      { "name": "name", "label": "Name", "type": "text", "required": false },
+      { "name": "email", "label": "Email", "type": "email", "required": true },
+      { "name": "message", "label": "Message", "type": "textarea", "required": false }
+    ]
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Company",
+        "links": [
+          { "label": "Home", "href": "/" },
+          { "label": "Blog", "href": "/blog" },
+          { "label": "About Us", "href": "/about-us" }
+        ]
+      },
+      {
+        "title": "Products",
+        "links": [
+          { "label": "Grow Fast", "href": "/grow-fast" },
+          { "label": "Thrive", "href": "/thrive" },
+          { "label": "Bountiful", "href": "/bountiful" }
+        ]
+      }
+    ],
+    "attribution": "Website developed by QuantumByte IT Inc."
+  }
+}
